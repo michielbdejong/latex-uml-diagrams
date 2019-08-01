@@ -67,22 +67,32 @@ Node.js/JavaScript/TypeScript conventions were used as follows:
 \end{description}
 
 
-\newcommand\ResourceStoreBody{%
-  + getRepresentation(ResourceIdentifier, RepresentationPreferences) : Promise<Representation>\\
-  + addResource(container : ResourceIdentifier, Representation) : Promise<ResourceIdentifier>\\
-  + setRepresentation(ResourceIdentifier, Representation) : Promise<void>\\
-  + deleteResource(ResourceIdentifier) : Promise<void>\\
-  + modifyResource(ResourceIdentifier, Patch) : Promise<void>\\
+\newcommand\StoreManagerBody{%
+  + delete (url: URL): Promise<void>\\
+  + exists (url: URL): Promise<boolean>\\
+  + getResourceData (url: URL): Promise<ResourceData>\\
+  + addQuad (quad: Quad): Promise<void>\\
+  + deleteMatches (pattern: Pattern): Promise<void>\\
+  + match (pattern: Pattern): Promise<Array<Quad>>\\
+  + subjectsMatching (pattern: Pattern): Promise<Array<RdfJsTerm>>\\
+  + predicatesMatching (pattern: Pattern): Promise<Array<RdfJsTerm>>\\
+  + objectsMatching (pattern: Pattern): Promise<Array<RdfJsTerm>>\\
+  + getRepresentation (url: URL, options?: any): Promise<ResourceData>\\
+  + setRepresentation (url: URL, metaData: ResourceData): Promise<void>\\
+  + load (url: URL): Promise<void>\\
+  + save (url: URL): Promise<void>\\
+  + patch (url: URL, sparqlQuery: string, appendOnly: boolean): Promise<void>\\
+  + flushCache (url: URL): void\\
+
 }
 
 \section*{Diagram}
 \begin{tikzpicture}
 
-\begin{umlpackage}{Storage}
-  \umlinterface[below=2.25 of Operation]{ResourceStore}{}{
-    \ResourceStoreBody
+\begin{umlpackage}{StoreManager}
+  \umlinterface{StoreManager}{}{
+    \StoreManagerBody
   }
-  \umluniaggreg[mult=1]{Operation}{ResourceStore}
 \end{umlpackage}
 
 \end{tikzpicture}
