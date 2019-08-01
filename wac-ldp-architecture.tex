@@ -36,36 +36,12 @@
 % Document metadata
 \title{
   wac-ldp architecture
-  \it (status: draft)
 }
 \author{Michiel de Jong, Aaron Coburn}
 
 \begin{document}
 
 \maketitle
-
-
-\section*{Purpose}
-This document describes the code structure of inrupt's wac-ldp component.
-
-
-\section*{Legend}
-The architectural diagram follows standard UML notation.
-
-For more specific symbols that are not part of UML,
-Node.js/JavaScript/TypeScript conventions were used as follows:
-
-\begin{description}
-  \item[T?] represents a~value that is either not present
-            or a~value of type~T.
-  \item[Promise<T>] represents a~value that will asynchronously resolve
-                    to a~value of type~T.
-  \item[Readable<T>] represents an asynchronous one-time readable stream
-                     of values of type~T.
-  \item[Buffer] is an in-memory buffer of bytes,
-                possibly with a~character encoding.
-\end{description}
-
 
 \newcommand\StoreManagerBody{%
   + delete (url: URL): Promise<void>\\
@@ -83,7 +59,6 @@ Node.js/JavaScript/TypeScript conventions were used as follows:
   + save (url: URL): Promise<void>\\
   + patch (url: URL, sparqlQuery: string, appendOnly: boolean): Promise<void>\\
   + flushCache (url: URL): void\\
-
 }
 
 \section*{Diagram}
