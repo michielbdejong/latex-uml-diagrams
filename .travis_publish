@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO_NAME="RubenVerborgh/solid-server-architecture"
+REPO_NAME="michielbdejong/latex-uml-diagrams"
 PUBLICATION_BRANCH=gh-pages
 
 # Only publish from the main repository's master branch
