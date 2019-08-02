@@ -47,84 +47,88 @@
 \begin{tikzpicture}
 
 \begin{umlpackage}{core}
-  \umlinterface{WacLdp}{
+  \umlinterface[]{WacLdp}{}{
   }
 \end{umlpackage}
 
 \begin{umlpackage}{api/http}
-  \umlinterface{HttpParser}{
+  \umlinterface[]{HttpParser}{}{
   }
-  \umlinterface{HttpResponder}{
+  \umlinterface[]{HttpResponder}{
   }
 \end{umlpackage}
 
 \begin{umlpackage}{authentication}
-  \umlinterface{determineWebIdAndOrigin}{
+  \umlinterface[]{determineWebIdAndOrigin}{}{
   }
 \end{umlpackage}
 
 \begin{umlpackage}{authorization}
-  \umlinterface{AclManager}{
+  \umlinterface[]{AclManager}{
   }
-  \umlinterface{appIsTrustedForMode}{
+  \umlinterface[]{appIsTrustedForMode}{}{
   }
-  \umlinterface{checkAccess}{
+  \umlinterface[]{checkAccess}{}{
   }
-  \umlinterface{determineAllowedModes}{
+  \umlinterface[]{determineAllowedModes}{}{
   }
 \end{umlpackage}
 
 
 \begin{umlpackage}{operationHandlers}
-  \umlinterface{containerMemberAddHandler}{
+  \umlinterface[]{containerMemberAddHandler}{}{
   }
-  \umlinterface{deleteBlobHandler}{
+  \umlinterface[]{deleteBlobHandler}{}{
   }
-  \umlinterface{deleteContainerHandler}{
+  \umlinterface[]{deleteContainerHandler}{}{
   }
-  \umlinterface{globReadHandler}{
+  \umlinterface[]{globReadHandler}{}{
   }
-  \umlinterface{optionsHandler}{
+  \umlinterface[]{optionsHandler}{}{
   }
-  \umlinterface{readBlobHandler}{
+  \umlinterface[]{readBlobHandler}{}{
   }
-  \umlinterface{readContainerHandler}{
+  \umlinterface[]{readContainerHandler}{}{
   }
-  \umlinterface{updateBlobHandler}{
+  \umlinterface[]{updateBlobHandler}{}{
   }
-  \umlinterface{writeBlobHandler}{
+  \umlinterface[]{writeBlobHandler}{}{
   }
-  \umlinterface{unknownOperationCatchAll}{
+  \umlinterface[]{unknownOperationCatchAll}{}{
   }
-  \umlinterface{getResourceDataAndCheckETag}{
+  \umlinterface[]{getResourceDataAndCheckETag}{}{
+  }
+\end{umlpackage}
+
+
+\begin{umlpackage}{lit}
+  \umlinterface[]{rdf-constants}{
+  }
+  \umlinterface[]{generated-vocab-acl}{}{
+  }
+  \umlinterface[]{generated-vocab-foaf}{}{
+  }
+  \umlinterface[]{generated-vocab-ldp}{}{
+  }
+  \umlinterface[]{generated-vocab-rdf}{}{
+  }
+  \umlinterface[]{generated-vocab-vcard}{}{
   }
 \end{umlpackage}
 
 
 \begin{umlpackage}{rdf}
-  \umlinterface{generated-vocab-acl}{
+  \umlinterface[]{mergeRdfSources}{}{
   }
-  \umlinterface{generated-vocab-foaf}{
+  \umlinterface[]{RdfLibStoreManager}{}{
   }
-  \umlinterface{generated-vocab-ldp}{
+  \umlinterface[]{rdfToResourceData}{}{
   }
-  \umlinterface{generated-vocab-rdf}{
+  \umlinterface[]{ResourceDataUtils}{}{
   }
-  \umlinterface{generated-vocab-vcard}{
+  \umlinterface[]{setAppModes}{}{
   }
-  \umlinterface{mergeRdfSourcesl}{
-  }
-  \umlinterface{rdf-constants}{
-  }
-  \umlinterface{RdfLibStoreManager}{
-  }
-  \umlinterface{rdfToResourceData}{
-  }
-  \umlinterface{ResourceDataUtils}{
-  }
-  \umlinterface{setAppModes}{
-  }
-  \umlinterface{StoreManager}{
+  \umlinterface[]{StoreManager}{}{
     + delete (url: URL): Promise<void>\\
     + exists (url: URL): Promise<boolean>\\
     + getResourceData (url: URL): Promise<ResourceData>\\
@@ -145,36 +149,36 @@
 
 
 \begin{umlpackage}{storage}
-  \umlinterface{QuadAndBlobStore}{
+  \umlinterface[]{QuadAndBlobStore}{}{
   }
-  \umlinterface{BlobTree}{
+  \umlinterface[]{BlobTree}{}{
   }
-  \umlinterface{BlobTreeInMem}{
+  \umlinterface[]{BlobTreeInMem}{}{
   }
-  \umlinterface{Node}{
+  \umlinterface[]{Node}{}{
   }
-  \umlinterface{Container}{
+  \umlinterface[]{Container}{}{
   }
-  \umlinterface{Blob}{
+  \umlinterface[]{Blob}{
     + getData (): Promise<Array<Buffer>>\\
     + setData (data: Array<Buffer>): Promise<void>\\
     + getBodyVersion (etag: string): Promise<ReadableStream>\\
     + setBodyVersion (etag: string, data: ReadableStream): Promise<void>\\
     + deleteBodyVersion (etag: string): Promise<void>\\
   }
-  \umlinterface{membersListAsResourceData}{
+  \umlinterface[]{membersListAsResourceData}{}{
   }
 \end{umlpackage}
 
 
 \begin{umlpackage}{util}
-  \umlinterface{calculateETag}{
+  \umlinterface[]{calculateETag}{}{
   }
 \end{umlpackage}
 
-\umlinterface{exports}{
+\umlinterface[]{exports}{}{
 }
-\umlinterface{server}{
+\umlinterface[]{server}{}{
 }
 
 
