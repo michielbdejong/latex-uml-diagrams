@@ -54,7 +54,7 @@
 \begin{umlpackage}{api/http}
   \umlinterface[]{HttpParser}{}{
   }
-  \umlinterface[]{HttpResponder}{
+  \umlinterface[]{HttpResponder}{}{
   }
 \end{umlpackage}
 
@@ -64,7 +64,7 @@
 \end{umlpackage}
 
 \begin{umlpackage}{authorization}
-  \umlinterface[]{AclManager}{
+  \umlinterface[]{AclManager}{}{
   }
   \umlinterface[]{appIsTrustedForMode}{}{
   }
@@ -102,7 +102,7 @@
 
 
 \begin{umlpackage}{lit}
-  \umlinterface[]{rdf-constants}{
+  \umlinterface[]{rdf-constants}{}{
   }
   \umlinterface[]{generated-vocab-acl}{}{
   }
@@ -159,7 +159,7 @@
   }
   \umlinterface[]{Container}{}{
   }
-  \umlinterface[]{Blob}{
+  \umlinterface[]{Blob}{}{
     + getData (): Promise<Array<Buffer>>\\
     + setData (data: Array<Buffer>): Promise<void>\\
     + getBodyVersion (etag: string): Promise<ReadableStream>\\
